@@ -5,6 +5,7 @@ import br.com.ecommerce.domain.AddressesResponse;
 import br.com.ecommerce.integration.ViaCepService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import rx.observables.BlockingObservable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,8 @@ public class CheckoutFacade {
 
     @Autowired
     private ViaCepService viaCepService;
+
+
 
     public List<AddressesResponse> findAddresByZipCode(AddressesRequest addressesRequest) {
         List<AddressesResponse> addressesResponses = new ArrayList<>();
